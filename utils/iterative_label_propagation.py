@@ -2,7 +2,6 @@ import torch
 import torch.nn.functional as F
 
 # Define global variables (initialized to None)
-sim_im2im, knn_im2im = None, None
 sim_im2text, knn_im2text = None, None
 sim_im2fewshot, knn_im2fewshot = None, None
 sim_im2im_store = None
@@ -140,80 +139,66 @@ def knn_to_weighted_adj_matrix(knn, s, num_nodes):
     return W
 
 
-def dynamic_graph_expansion(features, clf, fewshot_features, k_text, k_image, k_fewshot):
+def _image_similarity(keys, queries, text_features, context_reweight):
+    if context_reweight:
+        return edge_reweighting(keys, queries, text_features, k=None, return_full=True, force_1=True)
+
+    return F.normalize(queries, dim=1) @ F.normalize(keys, dim=1).t()
+
+
+def _top_image_neighbors(scores, k):
+    # Dense columns and appended candidates are in index order within ties.
+    indices = scores.argsort(dim=1, descending=True, stable=True)[:, :k]
+    return scores.gather(1, indices), indices
+
+
+def dynamic_graph_expansion(features, clf, fewshot_features, k_text, k_image, k_fewshot, *,
+                            context_reweight=True):
     """
     Creates graph edges with separate KNN computations for image-image, image-text, and image-fewshot relations.
     """
-    global sim_im2im, knn_im2im, sim_im2text, knn_im2text, sim_im2fewshot, knn_im2fewshot, sim_im2im_store, knn_im2im_store
+    global sim_im2text, knn_im2text, sim_im2fewshot, knn_im2fewshot, sim_im2im_store, knn_im2im_store
 
     num_classes = clf.shape[0]  # Number of text features
     num_features = features.shape[0]  # Number of image features
 
     # Determine if this is the first time creating the graph
-    first_time = (sim_im2im is None) or (features.shape[0] == 2)
+    first_time = (sim_im2im_store is None) or (num_features == 2)
 
     # Determine number of fewshot examples
     num_fewshot = fewshot_features.shape[0] if fewshot_features is not None else 0
 
-    # Limit KNN based on number of available features
-    k_im2im = min(k_image, features.shape[0])
-
-    # Calculate image-image similarities
+    # The last row is temporary. Cache only neighbors among persistent image nodes.
+    k_cached = min(k_image, num_features - 1)
+    k_im2im = min(k_image, num_features)
     if first_time:
-        # Calculate full similarity matrix
-        sim_full = edge_reweighting(
-            features, features, clf, k=k_im2im, return_full=True, force_1=True
-        )
-        sim_im2im, knn_im2im = sim_full[:num_features, :num_features].topk(k_im2im, largest=True, dim=1)
-        # Store for subsequent calls
-        sim_im2im_store = sim_im2im.clone()
-        knn_im2im_store = knn_im2im.clone()
+        sim_full = _image_similarity(features, features, clf, context_reweight)
+        sim_im2im_store, knn_im2im_store = _top_image_neighbors(sim_full[:-1, :-1], k_cached)
+        temporary_column = sim_full[:-1, -1:]
+        temporary_row = sim_full[-1:]
+    else:
+        # Reweighting applies to queries, so the new rows and columns can differ.
+        new_columns = _image_similarity(features[-2:], features[:-2], clf, context_reweight)
+        new_rows = _image_similarity(features, features[-2:], clf, context_reweight)
 
-    else: # It is not the first time
-        # Calculate similarity only for the last two image features (incremental update)
-        sim_full_cr = edge_reweighting(
-            features[-2:], features, clf, k=k_im2im, return_full=True, force_1=True
-        ).t()
+        candidates = torch.cat((sim_im2im_store, new_columns[:, :1]), dim=1)
+        new_index = knn_im2im_store.new_full((num_features - 2, 1), num_features - 2)
+        candidate_indices = torch.cat((knn_im2im_store, new_index), dim=1)
+        old_scores, selected = _top_image_neighbors(candidates, k_cached)
+        new_scores, new_indices = _top_image_neighbors(new_rows[:1, :-1], k_cached)
+        sim_im2im_store = torch.cat((old_scores, new_scores), dim=0)
+        knn_im2im_store = torch.cat((candidate_indices.gather(1, selected), new_indices), dim=0)
 
-        # Update KNN and similarity incrementally by using the stored values and the newly calculated ones
-        sim_new, knn_new = sim_full_cr.topk(k_im2im, largest=True, dim=1)      # Top k similarities and indices for the new nodes
-        knn_new_idx = torch.full((knn_im2im.shape[0] - 1, 1), num_features - 1,  # Indices for the KNN of the new nodes
-                                  dtype=knn_new.dtype).to(knn_new.device)
+        temporary_column = torch.cat((new_columns[:, 1:], new_rows[:1, -1:]), dim=0)
+        temporary_row = new_rows[1:]
 
-        # Ensure KNNs are not compared with the same node and invalidate old entries
-        last_mask = knn_im2im_store == num_features - 2
-        sim_im2im_store[last_mask] = -1.0
-
-        # Concatenate existing and new KNNs, extend similarity and KNN info
-        sim_extended = torch.cat([sim_im2im_store[:-1], sim_full_cr[:, :num_features - 2].transpose(1, 0)],
-                                 dim=1)
-        knn_extended = torch.cat([knn_im2im_store[:-1], knn_new_idx - 1, knn_new_idx], dim=1)
-
-        # Preserve only the best (highest similarity score)
-        if sim_extended.shape[0] == k_im2im + 1:
-            k_im_new = k_im2im + 1
-        elif sim_extended.shape[0] > k_im2im:
-            k_im_new = k_im2im + 2
-        else:
-            k_im_new = k_im2im
-
-        # Truncate redundant
-        sim_im2im_store, ht = sim_extended.topk(k_im_new, largest=True, dim=1)
-        sim_im2im = sim_im2im_store[:, :k_im2im]
-        knn_im2im_store = knn_extended.gather(1, ht)
-        knn_im2im = knn_im2im_store[:, :k_im2im]
-
-        if sim_extended.shape[0] > k_im2im:
-            sim_new_more, knn_new_more = sim_full_cr.topk(k_im_new, largest=True, dim=1)
-            sim_im2im_store = torch.cat([sim_im2im_store, sim_new_more], dim=0)
-            knn_im2im_store = torch.cat([knn_im2im_store, knn_new_more], dim=0)
-        else:
-            sim_im2im_store = torch.cat([sim_im2im_store, sim_new], dim=0)
-            knn_im2im_store = torch.cat([knn_im2im_store, knn_new], dim=0)
-
-        # Concatenate the newest
-        sim_im2im = torch.cat([sim_im2im, sim_new], dim=0)
-        knn_im2im = torch.cat([knn_im2im, knn_new], dim=0)
+    candidates = torch.cat((sim_im2im_store, temporary_column), dim=1)
+    temporary_index = knn_im2im_store.new_full((num_features - 1, 1), num_features - 1)
+    candidate_indices = torch.cat((knn_im2im_store, temporary_index), dim=1)
+    scores, selected = _top_image_neighbors(candidates, k_im2im)
+    temporary_scores, temporary_neighbors = _top_image_neighbors(temporary_row, k_im2im)
+    sim_im2im = torch.cat((scores, temporary_scores), dim=0)
+    knn_im2im = torch.cat((candidate_indices.gather(1, selected), temporary_neighbors), dim=0)
 
     # Limit KNN based on number of classes
     k_im2text = min(k_text, num_classes)
@@ -281,7 +266,7 @@ def dynamic_graph_expansion(features, clf, fewshot_features, k_text, k_image, k_
 
 def iterative_label_propagation(image_features, text_features, k_text, k_image,
                                                     k_fewshot, gamma, alpha, max_iter=3, fewshot_image_features=None,
-                                                    fewshot_labels=None):
+                                                    fewshot_labels=None, *, context_reweight=True):
     """
     Performs iterative transductive label propagation.
 
@@ -296,6 +281,7 @@ def iterative_label_propagation(image_features, text_features, k_text, k_image,
         max_iter (int, optional): Number of label propagation iterations. Defaults to 3.
         fewshot_image_features (torch.Tensor, optional): Few-shot image feature vectors. Defaults to None.
         fewshot_labels (torch.Tensor, optional): Few-shot labels. Defaults to None.
+        context_reweight (bool, optional): Reweight test image-to-image similarities. Defaults to True.
 
     Returns:
         torch.Tensor: Predicted labels for the image features, along with timing information.
@@ -316,7 +302,10 @@ def iterative_label_propagation(image_features, text_features, k_text, k_image,
         num_fewshot = fewshot_image_features.shape[0]
 
         # Construct base KNN
-        knn, sim = dynamic_graph_expansion(image_features, text_features, fewshot_image_features, k_text, k_image, k_fewshot)
+        knn, sim = dynamic_graph_expansion(
+            image_features, text_features, fewshot_image_features, k_text, k_image, k_fewshot,
+            context_reweight=context_reweight,
+        )
 
         # Create masks for different types of nearest neighbors, different scaling factors apply
         mask_knn = (knn < num_class) & (knn >= 0) # KNNs that falls within the classes
@@ -330,7 +319,10 @@ def iterative_label_propagation(image_features, text_features, k_text, k_image,
 
     else: # If there are no fewshot img features, treat the problem as single data modality KNNs
 
-        knn, sim = dynamic_graph_expansion(image_features, text_features, None, k_text, k_image, 0)
+        knn, sim = dynamic_graph_expansion(
+            image_features, text_features, None, k_text, k_image, 0,
+            context_reweight=context_reweight,
+        )
         num_fewshot = 0                   # Set to 0, in case that the code crashed before and this var is not
         mask_knn = knn < num_class        # KNNs that falls within the classes
         sim[mask_knn] = sim[mask_knn] ** gamma # Apply scaling to classes  
