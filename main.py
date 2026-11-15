@@ -16,7 +16,7 @@ def main(args):
     for dataset_name in datasets:
         # Load pre-calculated features
         try:
-            pre_calculated = torch.load(os.path.join(args.features_path, args.task, args.clip_model, f'{dataset_name}.pt'))
+            pre_calculated = torch.load(os.path.join(args.features_path, args.task, args.clip_model, f'{dataset_name}.pt'), map_location=device)
             image_features_load, text_features_load, gts = pre_calculated['image_features'], pre_calculated['text_features'], pre_calculated['labels']
             text_features = text_features_load.to(device)  # Move to the GPU
         except FileNotFoundError:
@@ -29,7 +29,7 @@ def main(args):
 
         if args.mode == 'FS':
             try:
-                few_shot_pre_calculate = torch.load(os.path.join(args.features_path, args.task, args.clip_model, 'few_shots', f'{dataset_name}.pt'))
+                few_shot_pre_calculate = torch.load(os.path.join(args.features_path, args.task, args.clip_model, 'few_shots', f'{dataset_name}.pt'), map_location=device)
                 few_shot_image_features, few_shot_labels = few_shot_pre_calculate['image_features'], few_shot_pre_calculate['labels']
                 # Use specified number of shots and flatten
                 few_shot_image_features = few_shot_image_features[:, :args.num_shots, :].reshape(-1, few_shot_image_features.shape[-1]).to(device)

@@ -1,0 +1,74 @@
+{
+  "dataset": "eurosat",
+  "timestamp_utc": "2026-11-15T12:49:02.391284+00:00",
+  "source": "observed_official_inference",
+  "reference_run": "20261115T105603455074Z",
+  "feature": {
+    "path": "/home/zzdong/ECALP/features/fine_grained/RN/eurosat.pt",
+    "sha256": "0d782dfeff410841ffe9f958c57cde4e1d5ac245ce08767b5292e19dc6659fe4",
+    "image_shape": [
+      8100,
+      1024
+    ],
+    "text_shape": [
+      10,
+      1024
+    ],
+    "label_shape": [
+      8100
+    ],
+    "image_dtype": "torch.float32",
+    "text_dtype": "torch.float32",
+    "label_dtype": "torch.int64",
+    "label_range": [
+      0,
+      9
+    ],
+    "class_counts": [
+      900,
+      900,
+      900,
+      750,
+      750,
+      600,
+      750,
+      900,
+      750,
+      900
+    ],
+    "image_norms": {
+      "min": 0.9999997615814209,
+      "mean": 1.0,
+      "max": 1.000000238418579
+    },
+    "text_norms": {
+      "min": 0.9999999403953552,
+      "mean": 1.0,
+      "max": 1.0
+    }
+  },
+  "commit": "d8c139ec0533ebc573d55c40ca31367919c029e4",
+  "source_sha256": {
+    "main.py": "3fa73c7fd8f65dd3386bb63a3c75b19be7b018eca3f521cd7bd0f875ee8f4bb1",
+    "utils/iterative_label_propagation.py": "ee40d1288c5f2df94c4e3ff0f744dfd0d2ffe245473fa6e04d42cea34010846c",
+    "experiments/collect_demo_predictions.py": "58cdb218de694289171ff693e4d851dc33492df1d29b110b609c9b3ad07989a4"
+  },
+  "torch": "2.6.0+cu124",
+  "device": "cuda:4",
+  "sample_count": 8100,
+  "correct_clip": 3247,
+  "correct_ecalp": 3976,
+  "accuracy": {
+    "clip": 40.08641975308642,
+    "ecalp": 49.08641975308642
+  },
+  "outcomes": {
+    "corrected": 1158,
+    "regressed": 429,
+    "both_correct": 2818,
+    "both_wrong": 3695
+  },
+  "seconds": 62.570426310412586,
+  "predictions_sha256": "5f2e2bd4f482d57fad0fefc1efaccc69ef04d17f71b7e713f52612193ce7d68c",
+  "notes": "IDs are original feature-row indices; class names and raw images unavailable. Historical neighbor pseudo-labels are captured BEFORE current-sample propagation. All counts cover the full dataset; selected cases include failures."
+}

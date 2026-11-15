@@ -1,0 +1,27 @@
+{
+  "source": "https://drive.google.com/file/d/1-CXxtY77_Zj2Q1T2x0CFN-5a0xjKtz_A/view",
+  "archive": "features_zip/fine_grained.tar.gz",
+  "archive_sha256": "71bc29a9a9684ba9ef1ccf19d77d572780571ac0fe42798c77c30bb937be7e96",
+  "files": {
+    "DTD.pt": {
+      "archive_member": "Data05/liyushu/ECALP/features/fine_grained/RN/DTD.pt",
+      "bytes": 7137635,
+      "path": "features/fine_grained/RN/DTD.pt",
+      "sha256": "925c4be5cf5aa784078b205298d3298d6ca56f3d62e19bb562ca132331e42200"
+    },
+    "eurosat.pt": {
+      "archive_member": "Data05/liyushu/ECALP/features/fine_grained/RN/eurosat.pt",
+      "bytes": 33284515,
+      "path": "features/fine_grained/RN/eurosat.pt",
+      "sha256": "0d782dfeff410841ffe9f958c57cde4e1d5ac245ce08767b5292e19dc6659fe4"
+    },
+    "few_shots/DTD.pt": {
+      "archive_member": "Data05/liyushu/ECALP/features/fine_grained/RN/few_shots/DTD.pt",
+      "bytes": 3222567,
+      "path": "features/fine_grained/RN/few_shots/DTD.pt",
+      "sha256": "140446864c2f6588bc384c8d87908ee7d1d8011d1c02672ead70ed94f42081ce"
+    }
+  },
+  "missing": [],
+  "missing_required": []
+}

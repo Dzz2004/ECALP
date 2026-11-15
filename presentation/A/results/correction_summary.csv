@@ -1,0 +1,3 @@
+dataset,sample_count,clip_accuracy,ecalp_accuracy,gain_pp,corrected,regressed,net_correct,both_correct,both_wrong
+DTD,1692,48.64066193853428,54.491725768321515,5.851063829787236,164,65,99,758,705
+eurosat,8100,40.08641975308642,49.08641975308642,9.0,1158,429,729,2818,3695
