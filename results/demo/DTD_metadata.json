@@ -1,0 +1,111 @@
+{
+  "dataset": "DTD",
+  "timestamp_utc": "2026-11-15T12:46:17.923513+00:00",
+  "source": "observed_official_inference",
+  "reference_run": "20261115T105603455074Z",
+  "feature": {
+    "path": "/home/zzdong/ECALP/features/fine_grained/RN/DTD.pt",
+    "sha256": "925c4be5cf5aa784078b205298d3298d6ca56f3d62e19bb562ca132331e42200",
+    "image_shape": [
+      1692,
+      1024
+    ],
+    "text_shape": [
+      47,
+      1024
+    ],
+    "label_shape": [
+      1692
+    ],
+    "image_dtype": "torch.float32",
+    "text_dtype": "torch.float32",
+    "label_dtype": "torch.int64",
+    "label_range": [
+      0,
+      46
+    ],
+    "class_counts": [
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36,
+      36
+    ],
+    "image_norms": {
+      "min": 0.9999997615814209,
+      "mean": 1.0,
+      "max": 1.000000238418579
+    },
+    "text_norms": {
+      "min": 0.9999998211860657,
+      "mean": 1.0,
+      "max": 1.0000001192092896
+    }
+  },
+  "commit": "d8c139ec0533ebc573d55c40ca31367919c029e4",
+  "source_sha256": {
+    "main.py": "3fa73c7fd8f65dd3386bb63a3c75b19be7b018eca3f521cd7bd0f875ee8f4bb1",
+    "utils/iterative_label_propagation.py": "ee40d1288c5f2df94c4e3ff0f744dfd0d2ffe245473fa6e04d42cea34010846c",
+    "experiments/collect_demo_predictions.py": "58cdb218de694289171ff693e4d851dc33492df1d29b110b609c9b3ad07989a4"
+  },
+  "torch": "2.6.0+cu124",
+  "device": "cuda:4",
+  "sample_count": 1692,
+  "correct_clip": 823,
+  "correct_ecalp": 922,
+  "accuracy": {
+    "clip": 48.64066193853428,
+    "ecalp": 54.491725768321515
+  },
+  "outcomes": {
+    "corrected": 164,
+    "regressed": 65,
+    "both_correct": 758,
+    "both_wrong": 705
+  },
+  "seconds": 14.308751496486366,
+  "predictions_sha256": "d1339c449fafe73fc2516197c5d86a191123daa98cb7c11a46aa2ef004b07ed7",
+  "notes": "IDs are original feature-row indices; class names and raw images unavailable. Historical neighbor pseudo-labels are captured BEFORE current-sample propagation. All counts cover the full dataset; selected cases include failures."
+}

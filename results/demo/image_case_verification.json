@@ -1,0 +1,15 @@
+{
+  "verified_cases": [
+    102,
+    1516
+  ],
+  "actual_photo_inference_matches_captured_predictions": true,
+  "image_matching_threshold": 0.9999,
+  "minimum_runner_up_margin": 0.001,
+  "source_sha256": {
+    "experiments/match_image_cases.py": "8c1afbc4fc24838b8c285d223ade38390720f210ead740ec6eedb4c7d4a94e69",
+    "experiments/predict_image_case.py": "5e662aa3da9b1210a757167d4184013f12c238e9fe9893cb86d6d96d3aac7261",
+    "experiments/plot_image_cases.py": "da61be31f51840c2e1249f255e3a8517e07a2cb6544ec065d76c24d6f69e59d2"
+  },
+  "figure_sha256": "e4f03b8cd89560af9d6fa327b38c2a44203d641d2989da7385f0771af600a7cc"
+}

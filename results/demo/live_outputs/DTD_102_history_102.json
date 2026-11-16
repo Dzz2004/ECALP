@@ -1,0 +1,16 @@
+{
+  "image": "results/demo/images/DTD_102_knitted_0179.jpg",
+  "image_sha256": "2896c0a228d0f2906b75ab6553e4354d6d02070fa7aa57fe1a1aea35f19a3331",
+  "history_count": 102,
+  "clip_pred": 29,
+  "clip_name": "pleated",
+  "ecalp_pred": 20,
+  "ecalp_name": "knitted",
+  "ground_truth": 20,
+  "ground_truth_name": "knitted",
+  "matches_recorded_case": true,
+  "case_index": 102,
+  "source": "actual_image_encoded_and_history_replayed",
+  "torch": "2.6.0+cu124",
+  "input_transform": "CLIP RN50 resize 224 bicubic, center crop, RGB normalization"
+}

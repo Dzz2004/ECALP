@@ -133,3 +133,11 @@ We extend our sincere gratitude to the authors of the following repositories for
 - [CoOp/CoCoOp](https://github.com/KaiyangZhou/CoOp)
 - [TPT](https://github.com/azshue/TPT/tree/main)
 - [CLIP](https://github.com/openai/CLIP)
+
+## Course Project Reproduction
+
+本组课程复现的研究范围与分工见 [PROJECT_PLAN](docs/PROJECT_PLAN.md)。
+数据准备、环境、同特征 CLIP Baseline 和 RN50 Zero-shot 主结果运行说明见 [SETUP](docs/SETUP.md)。
+第一次正式实验的实测结果、对比图和日志见 [主结果报告](results/main_results.md)。
+PPT 图表、真实案例和无需 GPU 的代码回放见 [展示说明](docs/PRESENTATION.md)。
+按成员整理的展示材料统一放在 [presentation/](presentation/README.md)，A 的材料入口为 [presentation/A/](presentation/A/README.md)。

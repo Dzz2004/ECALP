@@ -1,0 +1,38 @@
+{
+  "DTD": {
+    "full_dataset_rows": 1692,
+    "outcomes": {
+      "corrected": 164,
+      "regressed": 65,
+      "both_correct": 758,
+      "both_wrong": 705
+    },
+    "net_correct": 99,
+    "fixed_case_selection_verified": true,
+    "all_captured_neighbors_are_historical": true
+  },
+  "eurosat": {
+    "full_dataset_rows": 8100,
+    "outcomes": {
+      "corrected": 1158,
+      "regressed": 429,
+      "both_correct": 2818,
+      "both_wrong": 3695
+    },
+    "net_correct": 729,
+    "fixed_case_selection_verified": true,
+    "all_captured_neighbors_are_historical": true
+  },
+  "figure_sha256": {
+    "accuracy_and_corrections.pdf": "af062a0874f889a02926e830e3cb4c5b34c5db376d61821409fcc97e3b0731f3",
+    "accuracy_and_corrections.png": "14902a91603b45df28d049dbf608dbf24e6a2b64dfe8f67efbf676367dc21e2d",
+    "case_comparison.pdf": "7db5dabbd23a243c776a345c4c06bcbb67301b118b1b8fdb0e933532a575d72d",
+    "case_comparison.png": "066c20680fff8292284c81e4cbcf650200afac835823fa46e5e106a09852982f",
+    "local_graph_case.pdf": "032845cb0a8f9b56a2514f31a1a8f655e64511bf1bdc4ee5f683ef5a2a9f723f",
+    "local_graph_case.png": "7b397529f2087cefa2ce409ba11ea9803515263043eeb2e0081abd13b190001d",
+    "paired_outcomes.pdf": "e52422fdbab18c2b11a5f715a1f38261b3aeb1ea0bf4b642dbf4238bc9f0b474",
+    "paired_outcomes.png": "4d054afe4908aef31e025f4c8bbeed12f853abed7c14b5f31cf48af9dfbb1374",
+    "stream_accuracy.pdf": "e06e0673da5c4e677500807298d7675c578f42425dd41ffca0ffac1f3b34aa33",
+    "stream_accuracy.png": "d7565d4295c5ba80bfdd5ba146e3a76eb5f17bff593ec5e194b94867ee7f96bb"
+  }
+}

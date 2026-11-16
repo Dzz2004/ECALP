@@ -1,0 +1,16 @@
+{
+  "image": "results/demo/images/DTD_1516_pleated_0060.jpg",
+  "image_sha256": "90790bf026a976e813549b41e474c65ff1205b322a0a962d27298f54a1cc5109",
+  "history_count": 1516,
+  "clip_pred": 29,
+  "clip_name": "pleated",
+  "ecalp_pred": 14,
+  "ecalp_name": "frilly",
+  "ground_truth": 29,
+  "ground_truth_name": "pleated",
+  "matches_recorded_case": true,
+  "case_index": 1516,
+  "source": "actual_image_encoded_and_history_replayed",
+  "torch": "2.6.0+cu124",
+  "input_transform": "CLIP RN50 resize 224 bicubic, center crop, RGB normalization"
+}
