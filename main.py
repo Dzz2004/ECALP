@@ -53,7 +53,8 @@ def main(args):
                 predictions_lp = iterative_label_propagation(
                     image_features, text_features, args.k_text, args.k_image, args.k_fewshot,
                     args.gamma, args.alpha, fewshot_image_features=few_shot_image_features,
-                    fewshot_labels=few_shot_labels, max_iter=args.num_iterations)
+                    fewshot_labels=few_shot_labels, max_iter=args.num_iterations,
+                    context_reweight=getattr(args, 'context_reweight', True))
 
                 # ----------------- Accuracy Calculation -----------------
                 gt = gts[i]
@@ -111,6 +112,8 @@ if __name__ == '__main__':
     parser.add_argument('--gamma', type=float, default=10.0, help='Scaling factor for image-image similarity')
     parser.add_argument('--alpha', type=float, default=1.0, help='Weight for text-based predictions')
     parser.add_argument('--num_iterations', type=int, default=3, help='Number of label propagation iterations')
+    parser.add_argument('--no-context-reweight', dest='context_reweight', action='store_false',
+                        help='Use cosine similarity for test image-to-image edges (default: context reweighting)')
 
     # Zero-shot or Few-shot
     parser.add_argument('--mode', type=str, choices=['ZS', 'FS'], default='ZS', help='Zero-shot (ZS) or Few-shot (FS) mode')

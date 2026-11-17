@@ -1,0 +1,12 @@
+D:\app\Anaconda3\python.exe -u D:\MyRepo\ECALP\main.py --task fine_grained --datasets DTD --clip_model RN --mode ZS --features_path D:\MyRepo\ECALP\features --no-context-reweight
+D:\MyRepo\ECALP\main.py:19: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  pre_calculated = torch.load(os.path.join(args.features_path, args.task, args.clip_model, f'{dataset_name}.pt'), map_location=device)
+D:\MyRepo\ECALP\utils\iterative_label_propagation.py:345: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\aten\src\ATen\SparseCsrTensorImpl.cpp:55.)
+  W_tilde = torch.sparse.mm(D_rootsquare, torch.sparse.mm(W, D_rootsquare))   # Final symmetric normalized weight matrix
+Dataset: DTD, Mode: ZS
+Top-1 Accuracy(LP):     53.78%
+----------------------------------------
+
+--- Summary of Results ---
+DTD: 53.78%
+--------------------------

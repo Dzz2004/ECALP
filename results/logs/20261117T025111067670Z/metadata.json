@@ -1,0 +1,16 @@
+{
+  "run_id": "20261117T025111067670Z",
+  "commit": "0139a3a141e99f90206a5b37dc28b39a431e346c",
+  "torch_version": "2.5.1+cpu",
+  "device": "cpu",
+  "threads": 4,
+  "source_sha256": {
+    "main.py": "ff2141ae441241c166d77d996da3592e29757adeb54ab29672a8f54dc7bef1ee",
+    "utils\\iterative_label_propagation.py": "fc61c1ddf6b964f435f295a9291a378fe6e4ec81ea944d6d34eb76b07be06c0a",
+    "experiments\\run_reweight_ablation.py": "2d416d234b1d831070765d601ac574c6f1b2065fda8e1f455fad56db23d83383"
+  },
+  "features": {
+    "DTD": "925c4be5cf5aa784078b205298d3298d6ca56f3d62e19bb562ca132331e42200",
+    "eurosat": "0d782dfeff410841ffe9f958c57cde4e1d5ac245ce08767b5292e19dc6659fe4"
+  }
+}
