@@ -1,0 +1,156 @@
+{
+  "run_id": "20261115T105603455074Z",
+  "commit": "d8c139ec0533ebc573d55c40ca31367919c029e4",
+  "git_status": "M .gitignore\n M README.md\n M main.py\n?? docs/SETUP.md\n?? experiments/\n?? requirements.txt\n?? results/",
+  "source_sha256": {
+    "main.py": "3fa73c7fd8f65dd3386bb63a3c75b19be7b018eca3f521cd7bd0f875ee8f4bb1",
+    "utils/iterative_label_propagation.py": "ee40d1288c5f2df94c4e3ff0f744dfd0d2ffe245473fa6e04d42cea34010846c",
+    "experiments/run_main_results.py": "2d68f193ad3342157dfd98d94658df5d9242cc840f024cb1a7024d369b429f50",
+    "requirements.txt": "9df10df010348cb5cc1b90a0ab4f81e46ace7ed0b889748138fadb82ae8580a8"
+  },
+  "python": "3.10.20 (main, Mar 11 2026, 17:46:40) [GCC 14.3.0]",
+  "executable": "/home/zzdong/ECALP/.venv/bin/python",
+  "torch": "2.6.0+cu124",
+  "cuda_build": "12.4",
+  "device": "NVIDIA GeForce RTX 3090",
+  "cuda_visible_devices": "4",
+  "threads": 4,
+  "command": "/home/zzdong/ECALP/.venv/bin/python experiments/run_main_results.py --datasets DTD eurosat --device cuda:4",
+  "source": "ours",
+  "ecalp_parameters": {
+    "k_text": 3,
+    "k_image": 8,
+    "k_fewshot": 8,
+    "gamma": 10,
+    "alpha": 1,
+    "iterations": 3,
+    "beta": 0.2
+  },
+  "features": {
+    "DTD": {
+      "path": "/home/zzdong/ECALP/features/fine_grained/RN/DTD.pt",
+      "sha256": "925c4be5cf5aa784078b205298d3298d6ca56f3d62e19bb562ca132331e42200",
+      "image_shape": [
+        1692,
+        1024
+      ],
+      "text_shape": [
+        47,
+        1024
+      ],
+      "label_shape": [
+        1692
+      ],
+      "image_dtype": "torch.float32",
+      "text_dtype": "torch.float32",
+      "label_dtype": "torch.int64",
+      "label_range": [
+        0,
+        46
+      ],
+      "class_counts": [
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36
+      ],
+      "image_norms": {
+        "min": 0.9999997615814209,
+        "mean": 1.0,
+        "max": 1.000000238418579
+      },
+      "text_norms": {
+        "min": 0.9999998211860657,
+        "mean": 1.0,
+        "max": 1.0000001192092896
+      }
+    },
+    "eurosat": {
+      "path": "/home/zzdong/ECALP/features/fine_grained/RN/eurosat.pt",
+      "sha256": "0d782dfeff410841ffe9f958c57cde4e1d5ac245ce08767b5292e19dc6659fe4",
+      "image_shape": [
+        8100,
+        1024
+      ],
+      "text_shape": [
+        10,
+        1024
+      ],
+      "label_shape": [
+        8100
+      ],
+      "image_dtype": "torch.float32",
+      "text_dtype": "torch.float32",
+      "label_dtype": "torch.int64",
+      "label_range": [
+        0,
+        9
+      ],
+      "class_counts": [
+        900,
+        900,
+        900,
+        750,
+        750,
+        600,
+        750,
+        900,
+        750,
+        900
+      ],
+      "image_norms": {
+        "min": 0.9999997615814209,
+        "mean": 1.0,
+        "max": 1.000000238418579
+      },
+      "text_norms": {
+        "min": 0.9999999403953552,
+        "mean": 1.0,
+        "max": 1.0
+      }
+    }
+  }
+}

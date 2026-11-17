@@ -1,0 +1,10 @@
+/home/zzdong/ECALP/.venv/bin/python -u /home/zzdong/ECALP/main.py --task fine_grained --datasets eurosat --clip_model RN --mode ZS --features_path /home/zzdong/ECALP/features
+/home/zzdong/miniconda3/envs/minimind/lib/python3.10/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Dataset: eurosat, Mode: ZS
+Top-1 Accuracy(LP):     49.09%
+----------------------------------------
+
+--- Summary of Results ---
+eurosat: 49.09%
+--------------------------

@@ -1,0 +1,2 @@
+# Preserve CSV evidence bytes and recognize Python csv's CRLF record endings.
+*.csv -text whitespace=cr-at-eol

@@ -1,0 +1,854 @@
+[
+  {
+    "dataset": "DTD",
+    "sample_index": 99,
+    "ground_truth": 38,
+    "clip_pred": 38,
+    "ecalp_pred": 38,
+    "outcome": "both_correct",
+    "clip_correct": 1,
+    "ecalp_correct": 1,
+    "clip_top3": [
+      {
+        "class_id": 38,
+        "cosine": 0.2544366419315338
+      },
+      {
+        "class_id": 33,
+        "cosine": 0.23396235704421997
+      },
+      {
+        "class_id": 45,
+        "cosine": 0.22977258265018463
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 19,
+        "previous_pseudo_label": 38,
+        "reweighted_similarity": 0.3899444043636322
+      },
+      {
+        "sample_index": 47,
+        "previous_pseudo_label": 23,
+        "reweighted_similarity": 0.35347768664360046
+      },
+      {
+        "sample_index": 38,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.34131303429603577
+      },
+      {
+        "sample_index": 32,
+        "previous_pseudo_label": 31,
+        "reweighted_similarity": 0.33542537689208984
+      },
+      {
+        "sample_index": 59,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.3335464894771576
+      },
+      {
+        "sample_index": 34,
+        "previous_pseudo_label": 28,
+        "reweighted_similarity": 0.2888626456260681
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 38,
+        "cosine": 0.254436731338501
+      },
+      {
+        "class_id": 33,
+        "cosine": 0.2339625060558319
+      },
+      {
+        "class_id": 45,
+        "cosine": 0.22977258265018463
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  },
+  {
+    "dataset": "DTD",
+    "sample_index": 100,
+    "ground_truth": 16,
+    "clip_pred": 27,
+    "ecalp_pred": 27,
+    "outcome": "both_wrong",
+    "clip_correct": 0,
+    "ecalp_correct": 0,
+    "clip_top3": [
+      {
+        "class_id": 27,
+        "cosine": 0.2508634924888611
+      },
+      {
+        "class_id": 25,
+        "cosine": 0.25083452463150024
+      },
+      {
+        "class_id": 10,
+        "cosine": 0.24622534215450287
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 50,
+        "previous_pseudo_label": 27,
+        "reweighted_similarity": 0.346147745847702
+      },
+      {
+        "sample_index": 86,
+        "previous_pseudo_label": 25,
+        "reweighted_similarity": 0.335997611284256
+      },
+      {
+        "sample_index": 29,
+        "previous_pseudo_label": 25,
+        "reweighted_similarity": 0.3330882489681244
+      },
+      {
+        "sample_index": 55,
+        "previous_pseudo_label": 30,
+        "reweighted_similarity": 0.33090537786483765
+      },
+      {
+        "sample_index": 21,
+        "previous_pseudo_label": 18,
+        "reweighted_similarity": 0.31999877095222473
+      },
+      {
+        "sample_index": 82,
+        "previous_pseudo_label": 8,
+        "reweighted_similarity": 0.31928467750549316
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 27,
+        "cosine": 0.2508634328842163
+      },
+      {
+        "class_id": 25,
+        "cosine": 0.25083452463150024
+      },
+      {
+        "class_id": 10,
+        "cosine": 0.24622544646263123
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  },
+  {
+    "dataset": "DTD",
+    "sample_index": 101,
+    "ground_truth": 11,
+    "clip_pred": 11,
+    "ecalp_pred": 11,
+    "outcome": "both_correct",
+    "clip_correct": 1,
+    "ecalp_correct": 1,
+    "clip_top3": [
+      {
+        "class_id": 11,
+        "cosine": 0.22637173533439636
+      },
+      {
+        "class_id": 42,
+        "cosine": 0.22457070648670197
+      },
+      {
+        "class_id": 9,
+        "cosine": 0.21579015254974365
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 61,
+        "previous_pseudo_label": 24,
+        "reweighted_similarity": 0.33632105588912964
+      },
+      {
+        "sample_index": 46,
+        "previous_pseudo_label": 20,
+        "reweighted_similarity": 0.31597015261650085
+      },
+      {
+        "sample_index": 1,
+        "previous_pseudo_label": 45,
+        "reweighted_similarity": 0.3013335168361664
+      },
+      {
+        "sample_index": 34,
+        "previous_pseudo_label": 28,
+        "reweighted_similarity": 0.2941819429397583
+      },
+      {
+        "sample_index": 53,
+        "previous_pseudo_label": 15,
+        "reweighted_similarity": 0.2908308506011963
+      },
+      {
+        "sample_index": 17,
+        "previous_pseudo_label": 24,
+        "reweighted_similarity": 0.28715232014656067
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 11,
+        "cosine": 0.22637169063091278
+      },
+      {
+        "class_id": 42,
+        "cosine": 0.22457070648670197
+      },
+      {
+        "class_id": 9,
+        "cosine": 0.21579021215438843
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  },
+  {
+    "dataset": "DTD",
+    "sample_index": 102,
+    "ground_truth": 20,
+    "clip_pred": 29,
+    "ecalp_pred": 20,
+    "outcome": "corrected",
+    "clip_correct": 0,
+    "ecalp_correct": 1,
+    "clip_top3": [
+      {
+        "class_id": 29,
+        "cosine": 0.25109997391700745
+      },
+      {
+        "class_id": 20,
+        "cosine": 0.24711790680885315
+      },
+      {
+        "class_id": 44,
+        "cosine": 0.24612371623516083
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 72,
+        "previous_pseudo_label": 20,
+        "reweighted_similarity": 0.3457156717777252
+      },
+      {
+        "sample_index": 46,
+        "previous_pseudo_label": 20,
+        "reweighted_similarity": 0.34422415494918823
+      },
+      {
+        "sample_index": 57,
+        "previous_pseudo_label": 30,
+        "reweighted_similarity": 0.3433154225349426
+      },
+      {
+        "sample_index": 1,
+        "previous_pseudo_label": 45,
+        "reweighted_similarity": 0.3318966031074524
+      },
+      {
+        "sample_index": 13,
+        "previous_pseudo_label": 26,
+        "reweighted_similarity": 0.31955400109291077
+      },
+      {
+        "sample_index": 40,
+        "previous_pseudo_label": 42,
+        "reweighted_similarity": 0.3185822665691376
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 29,
+        "cosine": 0.25109994411468506
+      },
+      {
+        "class_id": 20,
+        "cosine": 0.2471178025007248
+      },
+      {
+        "class_id": 44,
+        "cosine": 0.24612365663051605
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  },
+  {
+    "dataset": "DTD",
+    "sample_index": 103,
+    "ground_truth": 44,
+    "clip_pred": 20,
+    "ecalp_pred": 20,
+    "outcome": "both_wrong",
+    "clip_correct": 0,
+    "ecalp_correct": 0,
+    "clip_top3": [
+      {
+        "class_id": 20,
+        "cosine": 0.2701677978038788
+      },
+      {
+        "class_id": 44,
+        "cosine": 0.25279536843299866
+      },
+      {
+        "class_id": 2,
+        "cosine": 0.24060538411140442
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 18,
+        "previous_pseudo_label": 20,
+        "reweighted_similarity": 0.3629571199417114
+      },
+      {
+        "sample_index": 46,
+        "previous_pseudo_label": 20,
+        "reweighted_similarity": 0.3541033864021301
+      },
+      {
+        "sample_index": 72,
+        "previous_pseudo_label": 20,
+        "reweighted_similarity": 0.35029518604278564
+      },
+      {
+        "sample_index": 14,
+        "previous_pseudo_label": 17,
+        "reweighted_similarity": 0.34438902139663696
+      },
+      {
+        "sample_index": 40,
+        "previous_pseudo_label": 42,
+        "reweighted_similarity": 0.342088907957077
+      },
+      {
+        "sample_index": 102,
+        "previous_pseudo_label": 20,
+        "reweighted_similarity": 0.3365600109100342
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 20,
+        "cosine": 0.2701677680015564
+      },
+      {
+        "class_id": 44,
+        "cosine": 0.25279533863067627
+      },
+      {
+        "class_id": 2,
+        "cosine": 0.24060535430908203
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  },
+  {
+    "dataset": "DTD",
+    "sample_index": 104,
+    "ground_truth": 11,
+    "clip_pred": 24,
+    "ecalp_pred": 24,
+    "outcome": "both_wrong",
+    "clip_correct": 0,
+    "ecalp_correct": 0,
+    "clip_top3": [
+      {
+        "class_id": 24,
+        "cosine": 0.21174857020378113
+      },
+      {
+        "class_id": 11,
+        "cosine": 0.20978187024593353
+      },
+      {
+        "class_id": 44,
+        "cosine": 0.20623213052749634
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 73,
+        "previous_pseudo_label": 11,
+        "reweighted_similarity": 0.33968234062194824
+      },
+      {
+        "sample_index": 68,
+        "previous_pseudo_label": 1,
+        "reweighted_similarity": 0.28915563225746155
+      },
+      {
+        "sample_index": 101,
+        "previous_pseudo_label": 11,
+        "reweighted_similarity": 0.28460341691970825
+      },
+      {
+        "sample_index": 66,
+        "previous_pseudo_label": 18,
+        "reweighted_similarity": 0.2827245891094208
+      },
+      {
+        "sample_index": 34,
+        "previous_pseudo_label": 28,
+        "reweighted_similarity": 0.2826681137084961
+      },
+      {
+        "sample_index": 6,
+        "previous_pseudo_label": 1,
+        "reweighted_similarity": 0.2806338667869568
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 24,
+        "cosine": 0.21174858510494232
+      },
+      {
+        "class_id": 11,
+        "cosine": 0.20978188514709473
+      },
+      {
+        "class_id": 44,
+        "cosine": 0.20623210072517395
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  },
+  {
+    "dataset": "DTD",
+    "sample_index": 105,
+    "ground_truth": 27,
+    "clip_pred": 27,
+    "ecalp_pred": 27,
+    "outcome": "both_correct",
+    "clip_correct": 1,
+    "ecalp_correct": 1,
+    "clip_top3": [
+      {
+        "class_id": 27,
+        "cosine": 0.253656804561615
+      },
+      {
+        "class_id": 10,
+        "cosine": 0.2464754283428192
+      },
+      {
+        "class_id": 25,
+        "cosine": 0.2417450249195099
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 100,
+        "previous_pseudo_label": 27,
+        "reweighted_similarity": 0.3647143244743347
+      },
+      {
+        "sample_index": 50,
+        "previous_pseudo_label": 27,
+        "reweighted_similarity": 0.35295379161834717
+      },
+      {
+        "sample_index": 86,
+        "previous_pseudo_label": 25,
+        "reweighted_similarity": 0.3466472029685974
+      },
+      {
+        "sample_index": 29,
+        "previous_pseudo_label": 25,
+        "reweighted_similarity": 0.3341827988624573
+      },
+      {
+        "sample_index": 55,
+        "previous_pseudo_label": 30,
+        "reweighted_similarity": 0.33203598856925964
+      },
+      {
+        "sample_index": 12,
+        "previous_pseudo_label": 25,
+        "reweighted_similarity": 0.330454021692276
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 27,
+        "cosine": 0.2536567449569702
+      },
+      {
+        "class_id": 10,
+        "cosine": 0.2464754283428192
+      },
+      {
+        "class_id": 25,
+        "cosine": 0.24174495041370392
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  },
+  {
+    "dataset": "DTD",
+    "sample_index": 106,
+    "ground_truth": 7,
+    "clip_pred": 32,
+    "ecalp_pred": 7,
+    "outcome": "corrected",
+    "clip_correct": 0,
+    "ecalp_correct": 1,
+    "clip_top3": [
+      {
+        "class_id": 32,
+        "cosine": 0.2411113679409027
+      },
+      {
+        "class_id": 7,
+        "cosine": 0.2330484837293625
+      },
+      {
+        "class_id": 42,
+        "cosine": 0.2189140021800995
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 59,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.36414968967437744
+      },
+      {
+        "sample_index": 38,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.35325270891189575
+      },
+      {
+        "sample_index": 60,
+        "previous_pseudo_label": 32,
+        "reweighted_similarity": 0.3266710937023163
+      },
+      {
+        "sample_index": 3,
+        "previous_pseudo_label": 32,
+        "reweighted_similarity": 0.3243592083454132
+      },
+      {
+        "sample_index": 68,
+        "previous_pseudo_label": 1,
+        "reweighted_similarity": 0.2973270118236542
+      },
+      {
+        "sample_index": 99,
+        "previous_pseudo_label": 38,
+        "reweighted_similarity": 0.29472291469573975
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 32,
+        "cosine": 0.24111124873161316
+      },
+      {
+        "class_id": 7,
+        "cosine": 0.23304852843284607
+      },
+      {
+        "class_id": 42,
+        "cosine": 0.2189140021800995
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  },
+  {
+    "dataset": "DTD",
+    "sample_index": 110,
+    "ground_truth": 20,
+    "clip_pred": 44,
+    "ecalp_pred": 20,
+    "outcome": "corrected",
+    "clip_correct": 0,
+    "ecalp_correct": 1,
+    "clip_top3": [
+      {
+        "class_id": 44,
+        "cosine": 0.26983189582824707
+      },
+      {
+        "class_id": 20,
+        "cosine": 0.26380476355552673
+      },
+      {
+        "class_id": 15,
+        "cosine": 0.24744589626789093
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 103,
+        "previous_pseudo_label": 20,
+        "reweighted_similarity": 0.36231696605682373
+      },
+      {
+        "sample_index": 57,
+        "previous_pseudo_label": 30,
+        "reweighted_similarity": 0.3604317307472229
+      },
+      {
+        "sample_index": 46,
+        "previous_pseudo_label": 20,
+        "reweighted_similarity": 0.35457342863082886
+      },
+      {
+        "sample_index": 72,
+        "previous_pseudo_label": 20,
+        "reweighted_similarity": 0.3530072569847107
+      },
+      {
+        "sample_index": 102,
+        "previous_pseudo_label": 20,
+        "reweighted_similarity": 0.34369564056396484
+      },
+      {
+        "sample_index": 18,
+        "previous_pseudo_label": 20,
+        "reweighted_similarity": 0.3413444757461548
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 44,
+        "cosine": 0.26983174681663513
+      },
+      {
+        "class_id": 20,
+        "cosine": 0.26380473375320435
+      },
+      {
+        "class_id": 15,
+        "cosine": 0.2474460005760193
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  },
+  {
+    "dataset": "DTD",
+    "sample_index": 166,
+    "ground_truth": 29,
+    "clip_pred": 29,
+    "ecalp_pred": 17,
+    "outcome": "regressed",
+    "clip_correct": 1,
+    "ecalp_correct": 0,
+    "clip_top3": [
+      {
+        "class_id": 29,
+        "cosine": 0.26948291063308716
+      },
+      {
+        "class_id": 17,
+        "cosine": 0.25688275694847107
+      },
+      {
+        "class_id": 44,
+        "cosine": 0.25538259744644165
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 40,
+        "previous_pseudo_label": 42,
+        "reweighted_similarity": 0.3424433767795563
+      },
+      {
+        "sample_index": 148,
+        "previous_pseudo_label": 33,
+        "reweighted_similarity": 0.3347550630569458
+      },
+      {
+        "sample_index": 14,
+        "previous_pseudo_label": 44,
+        "reweighted_similarity": 0.33261120319366455
+      },
+      {
+        "sample_index": 28,
+        "previous_pseudo_label": 23,
+        "reweighted_similarity": 0.3309788107872009
+      },
+      {
+        "sample_index": 47,
+        "previous_pseudo_label": 23,
+        "reweighted_similarity": 0.3281424641609192
+      },
+      {
+        "sample_index": 121,
+        "previous_pseudo_label": 33,
+        "reweighted_similarity": 0.3220873475074768
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 29,
+        "cosine": 0.26948282122612
+      },
+      {
+        "class_id": 17,
+        "cosine": 0.25688275694847107
+      },
+      {
+        "class_id": 44,
+        "cosine": 0.25538256764411926
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  },
+  {
+    "dataset": "DTD",
+    "sample_index": 168,
+    "ground_truth": 43,
+    "clip_pred": 43,
+    "ecalp_pred": 8,
+    "outcome": "regressed",
+    "clip_correct": 1,
+    "ecalp_correct": 0,
+    "clip_top3": [
+      {
+        "class_id": 43,
+        "cosine": 0.25713181495666504
+      },
+      {
+        "class_id": 18,
+        "cosine": 0.24610863626003265
+      },
+      {
+        "class_id": 8,
+        "cosine": 0.245982363820076
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 86,
+        "previous_pseudo_label": 25,
+        "reweighted_similarity": 0.32037994265556335
+      },
+      {
+        "sample_index": 148,
+        "previous_pseudo_label": 33,
+        "reweighted_similarity": 0.312325656414032
+      },
+      {
+        "sample_index": 128,
+        "previous_pseudo_label": 18,
+        "reweighted_similarity": 0.3114624619483948
+      },
+      {
+        "sample_index": 105,
+        "previous_pseudo_label": 27,
+        "reweighted_similarity": 0.3075970411300659
+      },
+      {
+        "sample_index": 12,
+        "previous_pseudo_label": 25,
+        "reweighted_similarity": 0.30649563670158386
+      },
+      {
+        "sample_index": 55,
+        "previous_pseudo_label": 30,
+        "reweighted_similarity": 0.30287033319473267
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 43,
+        "cosine": 0.25713178515434265
+      },
+      {
+        "class_id": 18,
+        "cosine": 0.24610868096351624
+      },
+      {
+        "class_id": 8,
+        "cosine": 0.24598225951194763
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  },
+  {
+    "dataset": "DTD",
+    "sample_index": 179,
+    "ground_truth": 14,
+    "clip_pred": 14,
+    "ecalp_pred": 13,
+    "outcome": "regressed",
+    "clip_correct": 1,
+    "ecalp_correct": 0,
+    "clip_top3": [
+      {
+        "class_id": 14,
+        "cosine": 0.17360326647758484
+      },
+      {
+        "class_id": 13,
+        "cosine": 0.17158280313014984
+      },
+      {
+        "class_id": 1,
+        "cosine": 0.16524039208889008
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 36,
+        "previous_pseudo_label": 42,
+        "reweighted_similarity": 0.316222608089447
+      },
+      {
+        "sample_index": 89,
+        "previous_pseudo_label": 42,
+        "reweighted_similarity": 0.31492531299591064
+      },
+      {
+        "sample_index": 10,
+        "previous_pseudo_label": 36,
+        "reweighted_similarity": 0.2984909415245056
+      },
+      {
+        "sample_index": 175,
+        "previous_pseudo_label": 13,
+        "reweighted_similarity": 0.28997206687927246
+      },
+      {
+        "sample_index": 150,
+        "previous_pseudo_label": 6,
+        "reweighted_similarity": 0.2887777090072632
+      },
+      {
+        "sample_index": 22,
+        "previous_pseudo_label": 36,
+        "reweighted_similarity": 0.27071937918663025
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 14,
+        "cosine": 0.17360323667526245
+      },
+      {
+        "class_id": 13,
+        "cosine": 0.17158277332782745
+      },
+      {
+        "class_id": 1,
+        "cosine": 0.1652403175830841
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  }
+]

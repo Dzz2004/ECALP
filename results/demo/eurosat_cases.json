@@ -1,0 +1,854 @@
+[
+  {
+    "dataset": "eurosat",
+    "sample_index": 99,
+    "ground_truth": 3,
+    "clip_pred": 4,
+    "ecalp_pred": 7,
+    "outcome": "both_wrong",
+    "clip_correct": 0,
+    "ecalp_correct": 0,
+    "clip_top3": [
+      {
+        "class_id": 4,
+        "cosine": 0.249025359749794
+      },
+      {
+        "class_id": 7,
+        "cosine": 0.24728086590766907
+      },
+      {
+        "class_id": 3,
+        "cosine": 0.2315186858177185
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 96,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.46924686431884766
+      },
+      {
+        "sample_index": 87,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.4640907943248749
+      },
+      {
+        "sample_index": 2,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.4639072120189667
+      },
+      {
+        "sample_index": 55,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.46315011382102966
+      },
+      {
+        "sample_index": 26,
+        "previous_pseudo_label": 0,
+        "reweighted_similarity": 0.45428669452667236
+      },
+      {
+        "sample_index": 54,
+        "previous_pseudo_label": 4,
+        "reweighted_similarity": 0.45405513048171997
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 4,
+        "cosine": 0.2490253448486328
+      },
+      {
+        "class_id": 7,
+        "cosine": 0.24728085100650787
+      },
+      {
+        "class_id": 3,
+        "cosine": 0.23151874542236328
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  },
+  {
+    "dataset": "eurosat",
+    "sample_index": 100,
+    "ground_truth": 7,
+    "clip_pred": 7,
+    "ecalp_pred": 7,
+    "outcome": "both_correct",
+    "clip_correct": 1,
+    "ecalp_correct": 1,
+    "clip_top3": [
+      {
+        "class_id": 7,
+        "cosine": 0.2606559693813324
+      },
+      {
+        "class_id": 6,
+        "cosine": 0.2511795461177826
+      },
+      {
+        "class_id": 4,
+        "cosine": 0.24843907356262207
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 2,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.4879496097564697
+      },
+      {
+        "sample_index": 61,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.47628921270370483
+      },
+      {
+        "sample_index": 96,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.4712832570075989
+      },
+      {
+        "sample_index": 55,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.4664950966835022
+      },
+      {
+        "sample_index": 7,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.4625881016254425
+      },
+      {
+        "sample_index": 74,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.4612193703651428
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 7,
+        "cosine": 0.26065593957901
+      },
+      {
+        "class_id": 6,
+        "cosine": 0.2511794865131378
+      },
+      {
+        "class_id": 4,
+        "cosine": 0.24843908846378326
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  },
+  {
+    "dataset": "eurosat",
+    "sample_index": 101,
+    "ground_truth": 7,
+    "clip_pred": 4,
+    "ecalp_pred": 7,
+    "outcome": "corrected",
+    "clip_correct": 0,
+    "ecalp_correct": 1,
+    "clip_top3": [
+      {
+        "class_id": 4,
+        "cosine": 0.2248862385749817
+      },
+      {
+        "class_id": 7,
+        "cosine": 0.2219940423965454
+      },
+      {
+        "class_id": 6,
+        "cosine": 0.20405973494052887
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 57,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.4599916338920593
+      },
+      {
+        "sample_index": 40,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.4520024061203003
+      },
+      {
+        "sample_index": 2,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.44500404596328735
+      },
+      {
+        "sample_index": 28,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.4424722492694855
+      },
+      {
+        "sample_index": 100,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.44165855646133423
+      },
+      {
+        "sample_index": 41,
+        "previous_pseudo_label": 4,
+        "reweighted_similarity": 0.4387412369251251
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 4,
+        "cosine": 0.22488625347614288
+      },
+      {
+        "class_id": 7,
+        "cosine": 0.2219940423965454
+      },
+      {
+        "class_id": 6,
+        "cosine": 0.20405979454517365
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  },
+  {
+    "dataset": "eurosat",
+    "sample_index": 102,
+    "ground_truth": 4,
+    "clip_pred": 4,
+    "ecalp_pred": 4,
+    "outcome": "both_correct",
+    "clip_correct": 1,
+    "ecalp_correct": 1,
+    "clip_top3": [
+      {
+        "class_id": 4,
+        "cosine": 0.2738517224788666
+      },
+      {
+        "class_id": 7,
+        "cosine": 0.2669893503189087
+      },
+      {
+        "class_id": 6,
+        "cosine": 0.23474565148353577
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 96,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.4734042286872864
+      },
+      {
+        "sample_index": 18,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.46497076749801636
+      },
+      {
+        "sample_index": 61,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.4569307267665863
+      },
+      {
+        "sample_index": 81,
+        "previous_pseudo_label": 3,
+        "reweighted_similarity": 0.4567946195602417
+      },
+      {
+        "sample_index": 19,
+        "previous_pseudo_label": 4,
+        "reweighted_similarity": 0.455650269985199
+      },
+      {
+        "sample_index": 7,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.454891175031662
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 4,
+        "cosine": 0.27385175228118896
+      },
+      {
+        "class_id": 7,
+        "cosine": 0.2669892907142639
+      },
+      {
+        "class_id": 6,
+        "cosine": 0.23474565148353577
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  },
+  {
+    "dataset": "eurosat",
+    "sample_index": 103,
+    "ground_truth": 0,
+    "clip_pred": 1,
+    "ecalp_pred": 0,
+    "outcome": "corrected",
+    "clip_correct": 0,
+    "ecalp_correct": 1,
+    "clip_top3": [
+      {
+        "class_id": 1,
+        "cosine": 0.19898870587348938
+      },
+      {
+        "class_id": 0,
+        "cosine": 0.1943904161453247
+      },
+      {
+        "class_id": 2,
+        "cosine": 0.1931825578212738
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 36,
+        "previous_pseudo_label": 0,
+        "reweighted_similarity": 0.42588555812835693
+      },
+      {
+        "sample_index": 47,
+        "previous_pseudo_label": 3,
+        "reweighted_similarity": 0.42539143562316895
+      },
+      {
+        "sample_index": 71,
+        "previous_pseudo_label": 8,
+        "reweighted_similarity": 0.42180168628692627
+      },
+      {
+        "sample_index": 95,
+        "previous_pseudo_label": 0,
+        "reweighted_similarity": 0.41722363233566284
+      },
+      {
+        "sample_index": 52,
+        "previous_pseudo_label": 0,
+        "reweighted_similarity": 0.41614675521850586
+      },
+      {
+        "sample_index": 65,
+        "previous_pseudo_label": 3,
+        "reweighted_similarity": 0.41425657272338867
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 1,
+        "cosine": 0.1989886313676834
+      },
+      {
+        "class_id": 0,
+        "cosine": 0.1943904012441635
+      },
+      {
+        "class_id": 2,
+        "cosine": 0.19318240880966187
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  },
+  {
+    "dataset": "eurosat",
+    "sample_index": 104,
+    "ground_truth": 1,
+    "clip_pred": 1,
+    "ecalp_pred": 1,
+    "outcome": "both_correct",
+    "clip_correct": 1,
+    "ecalp_correct": 1,
+    "clip_top3": [
+      {
+        "class_id": 1,
+        "cosine": 0.2537901997566223
+      },
+      {
+        "class_id": 8,
+        "cosine": 0.24336159229278564
+      },
+      {
+        "class_id": 9,
+        "cosine": 0.24332869052886963
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 75,
+        "previous_pseudo_label": 1,
+        "reweighted_similarity": 0.4834497570991516
+      },
+      {
+        "sample_index": 60,
+        "previous_pseudo_label": 1,
+        "reweighted_similarity": 0.4801737070083618
+      },
+      {
+        "sample_index": 4,
+        "previous_pseudo_label": 1,
+        "reweighted_similarity": 0.46348947286605835
+      },
+      {
+        "sample_index": 86,
+        "previous_pseudo_label": 9,
+        "reweighted_similarity": 0.4592454433441162
+      },
+      {
+        "sample_index": 44,
+        "previous_pseudo_label": 1,
+        "reweighted_similarity": 0.4521002173423767
+      },
+      {
+        "sample_index": 50,
+        "previous_pseudo_label": 1,
+        "reweighted_similarity": 0.4513934254646301
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 1,
+        "cosine": 0.2537901699542999
+      },
+      {
+        "class_id": 8,
+        "cosine": 0.24336154758930206
+      },
+      {
+        "class_id": 9,
+        "cosine": 0.24332866072654724
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  },
+  {
+    "dataset": "eurosat",
+    "sample_index": 105,
+    "ground_truth": 9,
+    "clip_pred": 3,
+    "ecalp_pred": 9,
+    "outcome": "corrected",
+    "clip_correct": 0,
+    "ecalp_correct": 1,
+    "clip_top3": [
+      {
+        "class_id": 3,
+        "cosine": 0.2024417668581009
+      },
+      {
+        "class_id": 9,
+        "cosine": 0.20034757256507874
+      },
+      {
+        "class_id": 4,
+        "cosine": 0.1904374361038208
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 34,
+        "previous_pseudo_label": 9,
+        "reweighted_similarity": 0.4315603971481323
+      },
+      {
+        "sample_index": 27,
+        "previous_pseudo_label": 9,
+        "reweighted_similarity": 0.4308413863182068
+      },
+      {
+        "sample_index": 16,
+        "previous_pseudo_label": 3,
+        "reweighted_similarity": 0.4305019676685333
+      },
+      {
+        "sample_index": 12,
+        "previous_pseudo_label": 9,
+        "reweighted_similarity": 0.42668259143829346
+      },
+      {
+        "sample_index": 29,
+        "previous_pseudo_label": 9,
+        "reweighted_similarity": 0.4259096086025238
+      },
+      {
+        "sample_index": 77,
+        "previous_pseudo_label": 3,
+        "reweighted_similarity": 0.42497050762176514
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 3,
+        "cosine": 0.20244182646274567
+      },
+      {
+        "class_id": 9,
+        "cosine": 0.20034760236740112
+      },
+      {
+        "class_id": 4,
+        "cosine": 0.19043749570846558
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  },
+  {
+    "dataset": "eurosat",
+    "sample_index": 106,
+    "ground_truth": 2,
+    "clip_pred": 1,
+    "ecalp_pred": 1,
+    "outcome": "both_wrong",
+    "clip_correct": 0,
+    "ecalp_correct": 0,
+    "clip_top3": [
+      {
+        "class_id": 1,
+        "cosine": 0.2701960802078247
+      },
+      {
+        "class_id": 8,
+        "cosine": 0.25702178478240967
+      },
+      {
+        "class_id": 0,
+        "cosine": 0.25574859976768494
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 37,
+        "previous_pseudo_label": 1,
+        "reweighted_similarity": 0.4856981039047241
+      },
+      {
+        "sample_index": 75,
+        "previous_pseudo_label": 1,
+        "reweighted_similarity": 0.4773855209350586
+      },
+      {
+        "sample_index": 60,
+        "previous_pseudo_label": 1,
+        "reweighted_similarity": 0.47424525022506714
+      },
+      {
+        "sample_index": 44,
+        "previous_pseudo_label": 1,
+        "reweighted_similarity": 0.45929425954818726
+      },
+      {
+        "sample_index": 4,
+        "previous_pseudo_label": 1,
+        "reweighted_similarity": 0.4549545645713806
+      },
+      {
+        "sample_index": 104,
+        "previous_pseudo_label": 1,
+        "reweighted_similarity": 0.45446738600730896
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 1,
+        "cosine": 0.2701960802078247
+      },
+      {
+        "class_id": 8,
+        "cosine": 0.2570217549800873
+      },
+      {
+        "class_id": 0,
+        "cosine": 0.255748450756073
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  },
+  {
+    "dataset": "eurosat",
+    "sample_index": 108,
+    "ground_truth": 5,
+    "clip_pred": 0,
+    "ecalp_pred": 0,
+    "outcome": "both_wrong",
+    "clip_correct": 0,
+    "ecalp_correct": 0,
+    "clip_top3": [
+      {
+        "class_id": 0,
+        "cosine": 0.2539208233356476
+      },
+      {
+        "class_id": 6,
+        "cosine": 0.25197237730026245
+      },
+      {
+        "class_id": 7,
+        "cosine": 0.24956732988357544
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 94,
+        "previous_pseudo_label": 8,
+        "reweighted_similarity": 0.44082117080688477
+      },
+      {
+        "sample_index": 35,
+        "previous_pseudo_label": 3,
+        "reweighted_similarity": 0.4325086772441864
+      },
+      {
+        "sample_index": 84,
+        "previous_pseudo_label": 1,
+        "reweighted_similarity": 0.43219757080078125
+      },
+      {
+        "sample_index": 55,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.4309762120246887
+      },
+      {
+        "sample_index": 76,
+        "previous_pseudo_label": 6,
+        "reweighted_similarity": 0.4264683723449707
+      },
+      {
+        "sample_index": 71,
+        "previous_pseudo_label": 8,
+        "reweighted_similarity": 0.4264131486415863
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 0,
+        "cosine": 0.25392085313796997
+      },
+      {
+        "class_id": 6,
+        "cosine": 0.25197234749794006
+      },
+      {
+        "class_id": 7,
+        "cosine": 0.24956730008125305
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  },
+  {
+    "dataset": "eurosat",
+    "sample_index": 138,
+    "ground_truth": 0,
+    "clip_pred": 0,
+    "ecalp_pred": 2,
+    "outcome": "regressed",
+    "clip_correct": 1,
+    "ecalp_correct": 0,
+    "clip_top3": [
+      {
+        "class_id": 0,
+        "cosine": 0.22290143370628357
+      },
+      {
+        "class_id": 2,
+        "cosine": 0.21885737776756287
+      },
+      {
+        "class_id": 6,
+        "cosine": 0.21693839132785797
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 125,
+        "previous_pseudo_label": 0,
+        "reweighted_similarity": 0.42902687191963196
+      },
+      {
+        "sample_index": 36,
+        "previous_pseudo_label": 0,
+        "reweighted_similarity": 0.4284513294696808
+      },
+      {
+        "sample_index": 103,
+        "previous_pseudo_label": 0,
+        "reweighted_similarity": 0.42567113041877747
+      },
+      {
+        "sample_index": 52,
+        "previous_pseudo_label": 0,
+        "reweighted_similarity": 0.4239920377731323
+      },
+      {
+        "sample_index": 131,
+        "previous_pseudo_label": 0,
+        "reweighted_similarity": 0.4236755967140198
+      },
+      {
+        "sample_index": 89,
+        "previous_pseudo_label": 2,
+        "reweighted_similarity": 0.422527551651001
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 0,
+        "cosine": 0.22290147840976715
+      },
+      {
+        "class_id": 2,
+        "cosine": 0.21885739266872406
+      },
+      {
+        "class_id": 6,
+        "cosine": 0.21693828701972961
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  },
+  {
+    "dataset": "eurosat",
+    "sample_index": 143,
+    "ground_truth": 4,
+    "clip_pred": 4,
+    "ecalp_pred": 7,
+    "outcome": "regressed",
+    "clip_correct": 1,
+    "ecalp_correct": 0,
+    "clip_top3": [
+      {
+        "class_id": 4,
+        "cosine": 0.23545941710472107
+      },
+      {
+        "class_id": 7,
+        "cosine": 0.23468297719955444
+      },
+      {
+        "class_id": 6,
+        "cosine": 0.2036702036857605
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 88,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.44984111189842224
+      },
+      {
+        "sample_index": 55,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.44816678762435913
+      },
+      {
+        "sample_index": 19,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.4472886323928833
+      },
+      {
+        "sample_index": 28,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.4466846287250519
+      },
+      {
+        "sample_index": 67,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.44300752878189087
+      },
+      {
+        "sample_index": 18,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.441872775554657
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 4,
+        "cosine": 0.23545943200588226
+      },
+      {
+        "class_id": 7,
+        "cosine": 0.23468300700187683
+      },
+      {
+        "class_id": 6,
+        "cosine": 0.20367014408111572
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  },
+  {
+    "dataset": "eurosat",
+    "sample_index": 149,
+    "ground_truth": 4,
+    "clip_pred": 4,
+    "ecalp_pred": 7,
+    "outcome": "regressed",
+    "clip_correct": 1,
+    "ecalp_correct": 0,
+    "clip_top3": [
+      {
+        "class_id": 4,
+        "cosine": 0.26159802079200745
+      },
+      {
+        "class_id": 7,
+        "cosine": 0.2592901587486267
+      },
+      {
+        "class_id": 3,
+        "cosine": 0.22066253423690796
+      }
+    ],
+    "historical_neighbors": [
+      {
+        "sample_index": 7,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.47582781314849854
+      },
+      {
+        "sample_index": 67,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.4746120870113373
+      },
+      {
+        "sample_index": 74,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.47159960865974426
+      },
+      {
+        "sample_index": 61,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.46487799286842346
+      },
+      {
+        "sample_index": 18,
+        "previous_pseudo_label": 7,
+        "reweighted_similarity": 0.4644165337085724
+      },
+      {
+        "sample_index": 43,
+        "previous_pseudo_label": 4,
+        "reweighted_similarity": 0.4586939811706543
+      }
+    ],
+    "text_neighbors": [
+      {
+        "class_id": 4,
+        "cosine": 0.26159805059432983
+      },
+      {
+        "class_id": 7,
+        "cosine": 0.2592901587486267
+      },
+      {
+        "class_id": 3,
+        "cosine": 0.22066251933574677
+      }
+    ],
+    "selection": "first three per outcome after 100 samples have arrived"
+  }
+]

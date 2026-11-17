@@ -1,0 +1,26 @@
+[
+  {
+    "sample_index": 102,
+    "image": "results/demo/images/DTD_102_knitted_0179.jpg",
+    "class_id": 20,
+    "class_name": "knitted",
+    "cosine_match": 0.9999527931213379,
+    "runner_up_cosine": 0.8916581869125366,
+    "image_sha256": "2896c0a228d0f2906b75ab6553e4354d6d02070fa7aa57fe1a1aea35f19a3331",
+    "source": "https://huggingface.co/datasets/cansa/Describable-Textures-Dataset-DTD/resolve/main/images/knitted/knitted_0179.jpg",
+    "checkpoint_sha256": "afeb0e10f9e5a86da6080e35cf09123aca3b358a0c3e3b6c78a7b63bc04b6762",
+    "method": "RN50 OpenAI FP32 center-crop feature matching; threshold 0.9999; margin 0.001"
+  },
+  {
+    "sample_index": 1516,
+    "image": "results/demo/images/DTD_1516_pleated_0060.jpg",
+    "class_id": 29,
+    "class_name": "pleated",
+    "cosine_match": 0.9999991655349731,
+    "runner_up_cosine": 0.8491250276565552,
+    "image_sha256": "90790bf026a976e813549b41e474c65ff1205b322a0a962d27298f54a1cc5109",
+    "source": "https://huggingface.co/datasets/cansa/Describable-Textures-Dataset-DTD/resolve/main/images/pleated/pleated_0060.jpg",
+    "checkpoint_sha256": "afeb0e10f9e5a86da6080e35cf09123aca3b358a0c3e3b6c78a7b63bc04b6762",
+    "method": "RN50 OpenAI FP32 center-crop feature matching; threshold 0.9999; margin 0.001"
+  }
+]
