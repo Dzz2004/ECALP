@@ -140,9 +140,15 @@ def knn_to_weighted_adj_matrix(knn, s, num_nodes):
     return W
 
 
-def dynamic_graph_expansion(features, clf, fewshot_features, k_text, k_image, k_fewshot):
+def dynamic_graph_expansion(features, clf, fewshot_features, k_text, k_image, k_fewshot,
+                            include_image_image_edges=True):
     """
     Creates graph edges with separate KNN computations for image-image, image-text, and image-fewshot relations.
+
+    When ``include_image_image_edges`` is False, image KNN calculation and
+    incremental caches remain unchanged, but image-image edge weights are set
+    to zero when the graph inputs are assembled. Zero-weight entries are
+    filtered by ``knn_to_weighted_adj_matrix``.
     """
     global sim_im2im, knn_im2im, sim_im2text, knn_im2text, sim_im2fewshot, knn_im2fewshot, sim_im2im_store, knn_im2im_store
 
@@ -230,6 +236,10 @@ def dynamic_graph_expansion(features, clf, fewshot_features, k_text, k_image, k_
         sim_im2text = torch.cat((sim_im2text[:-1], sim_new, sim_new), axis=0)   # Concatenate to known
         knn_im2text = torch.cat((knn_im2text[:-1], knn_new, knn_new), axis=0)   # Ditto
 
+    # Keep the original KNN/cache path for a controlled ablation. Only the
+    # weights supplied to the final graph are changed.
+    graph_sim_im2im = sim_im2im if include_image_image_edges else torch.zeros_like(sim_im2im)
+
     # Handle few-shot image features
     if fewshot_features is not None:
         k_fewshot = min(k_fewshot, fewshot_features.shape[0])
@@ -251,7 +261,8 @@ def dynamic_graph_expansion(features, clf, fewshot_features, k_text, k_image, k_
 
         # Combine all KNN sources: image, text, fewshot
         knn, sim = combine_separate_knns_fewshot(
-            knn_im2im, sim_im2im, knn_im2text, sim_im2text, knn_im2fewshot, sim_im2fewshot, num_classes, num_fewshot
+            knn_im2im, graph_sim_im2im, knn_im2text, sim_im2text,
+            knn_im2fewshot, sim_im2fewshot, num_classes, num_fewshot
         )
 
         # Apply offsets to account for different feature spaces
@@ -268,7 +279,7 @@ def dynamic_graph_expansion(features, clf, fewshot_features, k_text, k_image, k_
 
     else:  # No few-shot features
         knn, sim = combine_separate_knns(
-            knn_im2im, sim_im2im, knn_im2text, sim_im2text, num_classes
+            knn_im2im, graph_sim_im2im, knn_im2text, sim_im2text, num_classes
         )
 
         # Append zeroed sim and -1 knn info, and offset KNN info to ensure uniqueness
@@ -281,7 +292,7 @@ def dynamic_graph_expansion(features, clf, fewshot_features, k_text, k_image, k_
 
 def iterative_label_propagation(image_features, text_features, k_text, k_image,
                                                     k_fewshot, gamma, alpha, max_iter=3, fewshot_image_features=None,
-                                                    fewshot_labels=None):
+                                                    fewshot_labels=None, include_image_image_edges=True):
     """
     Performs iterative transductive label propagation.
 
@@ -296,6 +307,8 @@ def iterative_label_propagation(image_features, text_features, k_text, k_image,
         max_iter (int, optional): Number of label propagation iterations. Defaults to 3.
         fewshot_image_features (torch.Tensor, optional): Few-shot image feature vectors. Defaults to None.
         fewshot_labels (torch.Tensor, optional): Few-shot labels. Defaults to None.
+        include_image_image_edges (bool, optional): Whether image-image edges
+            are included in the graph. Defaults to True.
 
     Returns:
         torch.Tensor: Predicted labels for the image features, along with timing information.
@@ -316,7 +329,10 @@ def iterative_label_propagation(image_features, text_features, k_text, k_image,
         num_fewshot = fewshot_image_features.shape[0]
 
         # Construct base KNN
-        knn, sim = dynamic_graph_expansion(image_features, text_features, fewshot_image_features, k_text, k_image, k_fewshot)
+        knn, sim = dynamic_graph_expansion(
+            image_features, text_features, fewshot_image_features,
+            k_text, k_image, k_fewshot, include_image_image_edges
+        )
 
         # Create masks for different types of nearest neighbors, different scaling factors apply
         mask_knn = (knn < num_class) & (knn >= 0) # KNNs that falls within the classes
@@ -330,7 +346,10 @@ def iterative_label_propagation(image_features, text_features, k_text, k_image,
 
     else: # If there are no fewshot img features, treat the problem as single data modality KNNs
 
-        knn, sim = dynamic_graph_expansion(image_features, text_features, None, k_text, k_image, 0)
+        knn, sim = dynamic_graph_expansion(
+            image_features, text_features, None,
+            k_text, k_image, 0, include_image_image_edges
+        )
         num_fewshot = 0                   # Set to 0, in case that the code crashed before and this var is not
         mask_knn = knn < num_class        # KNNs that falls within the classes
         sim[mask_knn] = sim[mask_knn] ** gamma # Apply scaling to classes  

@@ -1,0 +1,9 @@
+Dataset: DTD, Mode: ZS
+Top-1 Accuracy(LP):     54.43%
+----------------------------------------
+
+--- Summary of Results ---
+DTD: 54.43%
+--------------------------
+C:\Users\27427\Desktop\图像视频处理\ECALP\utils\iterative_label_propagation.py:372: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\SparseCsrTensorImpl.cpp:55.)
+  W_tilde = torch.sparse.mm(D_rootsquare, torch.sparse.mm(W, D_rootsquare))   # Final symmetric normalized weight matrix
